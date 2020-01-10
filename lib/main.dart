@@ -51,6 +51,15 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget emailField() {
     return TextFormField(
+      validator: (String value) {
+        var c = value.contains('@');
+        var d = value.contains('.com');
+        var F = c && d;
+        if (!F) {
+          return 'please enter a valid email';
+        }
+        ;
+      },
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
         hintText: 'you@example.com',
@@ -61,6 +70,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget passField() {
     return TextFormField(
+      validator: (String value) {
+        if (value.length < 8) {
+          return 'please enter a valid email';
+        }
+        ;
+      },
       obscureText: true,
       decoration:
           InputDecoration(labelText: 'Password', hintText: 'who cares!'),
@@ -70,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget submitButton() {
     return RaisedButton(
       onPressed: () {
-        finalkey.currentState.reset();
+        finalkey.currentState.validate();
       },
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(18.0),
