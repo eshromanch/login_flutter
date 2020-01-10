@@ -28,15 +28,20 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final finalkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(20.0),
       child: Form(
+        key: finalkey,
         child: Column(
           children: <Widget>[
             emailField(),
             passField(),
+            Container(
+              margin: EdgeInsets.only(top: 7.6),
+            ),
             submitButton(),
           ],
         ),
@@ -57,16 +62,15 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget passField() {
     return TextFormField(
       obscureText: true,
-      decoration: InputDecoration(
-        labelText: 'Password',
-      ),
+      decoration:
+          InputDecoration(labelText: 'Password', hintText: 'who cares!'),
     );
   }
 
   Widget submitButton() {
     return RaisedButton(
       onPressed: () {
-        print('fuck ya!');
+        finalkey.currentState.reset();
       },
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(18.0),
@@ -79,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
       color: Colors.blue,
-      padding: EdgeInsets.all(8.0),
+      //padding: EdgeInsets.all(8.0),
     );
   }
 }
