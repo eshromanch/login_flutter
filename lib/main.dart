@@ -13,11 +13,6 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.black,
-      //   title: Text('data'),
-      //   centerTitle: true,
-      // ),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -27,7 +22,7 @@ class Login extends StatelessWidget {
           ),
         ),
         child: Container(
-          margin: EdgeInsets.only(top: 70, bottom: 30, left: 40),
+          margin: EdgeInsets.only(top: 50),
           color: Colors.transparent,
           child: Form(
             key: finalkey,
@@ -39,20 +34,21 @@ class Login extends StatelessWidget {
                   'Login',
                   style: TextStyle(
                     fontSize: 25,
-                    fontFamily: 'Trajan Pro',
+                    fontFamily: 'Schyler',
                     color: Colors.white,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Container(
-                  height: 20,
+                  height: 10,
                 ),
                 emailField(),
                 Container(
-                  height: 20,
+                  height: 9,
                 ),
                 passField(),
                 Container(
-                  height: 20,
+                  height: 8,
                 ),
                 submitButton(),
               ],
@@ -65,6 +61,7 @@ class Login extends StatelessWidget {
 
   Widget emailField() {
     return TextFormField(
+      style: TextStyle(color: Colors.white),
       cursorColor: Colors.white,
       validator: (String value) {
         var c = value.contains("@");
@@ -103,6 +100,7 @@ class Login extends StatelessWidget {
 
   Widget passField() {
     return TextFormField(
+      style: TextStyle(color: Colors.white),
       validator: (String value) {
         if (value.length < 8) {
           return 'pass should be > 7';
