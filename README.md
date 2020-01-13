@@ -2,6 +2,13 @@
 
 A new Flutter project.
 
+### here's some ss
+
+![Screenshot](Screenshot/ss1.png)
+![Screenshot](Screenshot/ss2.png)
+![Screenshot](Screenshot/ss3.png)
+![Screenshot](Screenshot/ss4.png)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
