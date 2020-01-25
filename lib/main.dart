@@ -79,7 +79,7 @@ class Login extends StatelessWidget {
           hintText: 'you@example.com',
           labelText: 'Email',
           icon: Icon(
-            Icons.person,
+            Icons.wifi,
             color: Colors.white,
           ),
           enabledBorder: OutlineInputBorder(
